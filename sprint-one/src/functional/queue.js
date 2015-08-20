@@ -5,7 +5,6 @@ var Queue = function(){
   var storage = {};
   var enqueueCount = 0;
   var dequeueCount = 0;
-  //var count = 0;
 
   // Implement the methods below
 

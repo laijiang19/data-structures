@@ -29,8 +29,6 @@ var queueMethods = {
   size: function(){
     return this.eCnt - this.dCnt;
   }
-
-
 };
 
 

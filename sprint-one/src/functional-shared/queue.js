@@ -9,8 +9,7 @@ var Queue = function(){
   };
 
   _.extend(someInstance, queueMethods);
-  console.log(someInstance);
-
+  
   return someInstance;
 };
 
@@ -18,7 +17,6 @@ var queueMethods = {
   enqueue: function(value){
     this.storage[this.enqueueCnt] = value;
     this.enqueueCnt++;
-
   },
   dequeue: function(){
     if(this.enqueueCnt - this.dequeueCnt > 0){
@@ -28,8 +26,7 @@ var queueMethods = {
       return holder;
     }
   },
-  size: function(){
-    console.log(this.enqueueCnt - this.dequeueCnt);
+  size: function(){  
     return this.enqueueCnt - this.dequeueCnt;
   }
 };
