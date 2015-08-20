@@ -7,7 +7,6 @@ var Queue = function() {
   someInstance.dCnt = 0;
 
   return someInstance;
-
 };
 
 var queueMethods = {
@@ -17,14 +16,12 @@ var queueMethods = {
 
   },
   dequeue : function(){
-    if(this.eCnt - this.dCnt > 0){
-      
+    if(this.size() > 0){
       var holder = this.storage[this.dCnt];
       delete this.storage[this.dCnt];
       this.dCnt++;
       return holder;
     }
-
   },
   size: function(){
     return this.eCnt - this.dCnt;

@@ -19,7 +19,7 @@ var queueMethods = {
     this.enqueueCnt++;
   },
   dequeue: function(){
-    if(this.enqueueCnt - this.dequeueCnt > 0){
+    if(this.size() > 0){
       var holder = this.storage[this.dequeueCnt];
       delete this.storage[this.dequeueCnt];
       this.dequeueCnt++;

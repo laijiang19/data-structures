@@ -14,13 +14,12 @@ var Queue = function(){
   };
 
   someInstance.dequeue = function(){
-    if(enqueueCount-dequeueCount > 0){
+    if(someInstance.size() > 0){
       var holder = storage[dequeueCount];
       delete storage[dequeueCount];
       dequeueCount++;
       return holder; 
     }
-
   };
 
   someInstance.size = function(){
@@ -29,8 +28,3 @@ var Queue = function(){
 
   return someInstance;
 };
-
-//enqueue("a");  {"0":"a"} count = 1 first = 0
-//enqueue("b");  {"0":"a", "1":"b"}  count = 2  first = 0
-//dequeue();  {"1":"b"} count = 1 after deleting the current first item, first = 1
-//enqueue("c");  we want {"1":"b", "2":"c"} but we are getting {"1":"c"}
