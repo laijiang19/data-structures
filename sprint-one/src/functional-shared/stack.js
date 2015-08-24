@@ -1,9 +1,8 @@
 var Stack = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
+  
   var someInstance = {
-    storage : {},
-    count : 0
+    _storage : {},
+    _count : 0
   }; 
 
   _.extend(someInstance,stackMethods);
@@ -13,19 +12,19 @@ var Stack = function() {
 
 var stackMethods = {
   push : function(value){
-    this.storage[this.count] = value;
-    this.count++;
+    this._storage[this._count] = value;
+    this._count++;
   },
   pop : function(){
-    if (this.count > 0){
-      this.count--;
+    if (this._count > 0){
+      this._count--;
     }
-    var holder = this.storage[this.count];
-    delete this.storage[this.count];
+    var holder = this._storage[this._count];
+    delete this._storage[this._count];
     return holder;
   },
   size : function(){
-    return this.count;
+    return this._count;
   }
 };
 
